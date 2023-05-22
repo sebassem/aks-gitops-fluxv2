@@ -1,0 +1,15 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: vote-app-frontend
+  namespace: vote-app-frontend
+  annotations:
+    clusterconfig.azure.com/use-managed-source: "true"
+spec:
+  interval: 1m
+  releaseName: vote-app-frontend
+  chart:
+    spec:
+      chart: ./charts/vote-app/frontend
+  values:
+    replicas: 1
