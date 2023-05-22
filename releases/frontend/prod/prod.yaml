@@ -10,6 +10,6 @@ spec:
   releaseName: vote-app-frontend
   chart:
     spec:
-      chart: ./charts/vote-app/frontend
+      chart: ./charts/frontend
   values:
     replicas: 5
