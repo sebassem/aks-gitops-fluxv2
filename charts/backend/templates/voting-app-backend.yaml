@@ -13,7 +13,7 @@ kind: Deployment
 metadata:
   name: azure-vote-back
 spec:
-  replicas: ${{ int .Values.replicas }}
+  replicas: 1
   selector:
     matchLabels:
       app: azure-vote-back
@@ -38,4 +38,4 @@ spec:
             cpu: 250m
           limits:
             cpu: 500m
-            memory: 256m
+            memory: ${{ .Values.memory}}

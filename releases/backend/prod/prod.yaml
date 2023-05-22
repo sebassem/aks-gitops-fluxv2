@@ -12,4 +12,4 @@ spec:
     spec:
       chart: ./charts/backend
   values:
-    replicas: 5
+    memory: 512m
