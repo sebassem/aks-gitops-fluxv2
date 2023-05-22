@@ -14,7 +14,7 @@ kind: Deployment
 metadata:
   name: azure-vote-front
 spec:
-  replicas: ${{ .Values.replicas }}
+  replicas: ${{ int .Values.replicas }}
   selector:
     matchLabels:
       app: azure-vote-front

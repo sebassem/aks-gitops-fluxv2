@@ -13,7 +13,7 @@ kind: Deployment
 metadata:
   name: azure-vote-back
 spec:
-  replicas: ${{ .Values.replicas }}
+  replicas: ${{ int .Values.replicas }}
   selector:
     matchLabels:
       app: azure-vote-back
