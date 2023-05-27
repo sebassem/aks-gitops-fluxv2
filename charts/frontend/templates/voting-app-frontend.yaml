@@ -14,7 +14,7 @@ kind: Deployment
 metadata:
   name: azure-vote-front
 spec:
-  replicas: 1
+  replicas: ${{ .Values.replicas}}
   selector:
     matchLabels:
       app: azure-vote-front
@@ -40,7 +40,7 @@ spec:
             cpu: 250m
           limits:
             cpu: 500m
-            memory: ${{ .Values.memory}}
+            memory: 128m
         env:
         - name: REDIS
           value: "azure-vote-back"
