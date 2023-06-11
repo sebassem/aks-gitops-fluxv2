@@ -1,15 +1,4 @@
 apiVersion: apps/v1
-kind: Service
-metadata:
-  name: azure-vote-front
-spec:
-  type: LoadBalancer
-  ports:
-  - port: 80
-  selector:
-    app: azure-vote-front
----
-apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: azure-vote-front
@@ -44,3 +33,14 @@ spec:
         env:
         - name: REDIS
           value: "azure-vote-back"
+---
+apiVersion: apps/v1
+kind: Service
+metadata:
+  name: azure-vote-front
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+  selector:
+    app: azure-vote-front
