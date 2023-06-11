@@ -34,7 +34,7 @@ spec:
         - name: REDIS
           value: "azure-vote-back"
 ---
-apiVersion: apps/v1
+apiVersion: v1
 kind: Service
 metadata:
   name: azure-vote-front
