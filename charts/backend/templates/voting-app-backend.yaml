@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: azure-vote-back
 spec:
-  replicas: ${{ .Values.replicas}}
+  replicas: 3
   selector:
     matchLabels:
       app: azure-vote-back
@@ -25,7 +25,7 @@ spec:
           name: redis
         resources:
           requests:
-            cpu: 250m
+            cpu: ${{ .Values.cpu}}
           limits:
             cpu: 500m
             memory: 128m
